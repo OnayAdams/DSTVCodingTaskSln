@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DSTVCodingTask.Models.Element>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Periodic table of Elements</h2>
+    <table>
+        <tr>
+            <th style="padding:20px">Element Name</th>
+            <th style="padding:20px">Element Symbol</th>
+       
+            <th style="padding:20px">Is Valid symbol</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="padding:20px">@item.ElementName</td>
+                <td style="padding:20px">@item.Symbol</td>
+                
+                <td style="padding:20px">@item.IsValid</td>
+            </tr>
+        }
+        
+    </table>
+</div>
+
