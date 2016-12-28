@@ -21,7 +21,8 @@ namespace DSTVCodingTask.Tests
                 new Element() { ElementName = "Spenglerium", Symbol = "Ee" },
                 new Element() { ElementName = "Stantzon", Symbol = "Zt" },
                 new Element() { ElementName = "Tullium", Symbol = "Ty" },
-                new Element() { ElementName = "Tullium", Symbol = "Tt" }
+                new Element() { ElementName = "Tullium", Symbol = "Tt" },
+                new Element() { ElementName = "Zanium", Symbol = "za" }
             };
 
             _elements.AddRange(elementList);
@@ -77,9 +78,21 @@ namespace DSTVCodingTask.Tests
             IElementValidator validator = new ElementValidator();
 
             var errorMessages = new List<string>();
-            validator.ValidateTwoLettersApearTwice(errorMessages, _elements.LastOrDefault());
+            validator.ValidateTwoLettersApearTwice(errorMessages, _elements.FirstOrDefault(x => x.Symbol == "Tt"));
 
             Assert.IsTrue(errorMessages.FirstOrDefault() == ConstantStrings.LETTERS_APEAR_TWICE);
         }
+
+        [TestMethod]
+        public void Test_First_Letter_Capital()
+        {
+            IElementValidator validator = new ElementValidator();
+
+            var errorMessages = new List<string>();
+            validator.ValidateFirstLetterCapitalised(errorMessages, _elements.LastOrDefault());
+
+            Assert.IsTrue(errorMessages.FirstOrDefault() == ConstantStrings.FIRST_LETTER_CAP);
+        }
+
     }
 }

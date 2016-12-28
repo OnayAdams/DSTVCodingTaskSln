@@ -21,7 +21,8 @@ namespace DSTVCodingTask.Controllers
                 new Element() { ElementName = "Xenon", Symbol = "No" },
                 new Element() { ElementName = "Spenglerium", Symbol = "Ee" },
                 new Element() { ElementName = "Stantzon", Symbol = "Zt" },
-                new Element() { ElementName = "Tullium", Symbol = "Ty" }
+                new Element() { ElementName = "Tullium", Symbol = "Ty" },
+                new Element() { ElementName = "Zanium", Symbol = "za" }
             };
 
             _elements.AddRange(elementList);

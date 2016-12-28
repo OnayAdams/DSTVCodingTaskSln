@@ -27,7 +27,6 @@ namespace DSTVCodingTask.Models
 
                 ValidateTrailingLetterLowerCase(errorMessages, element);
 
-                ValidateFirstLetterCap(errorMessages, element);
 
                 if (errorMessages.Count > 0)
                 {
@@ -144,17 +143,5 @@ namespace DSTVCodingTask.Models
             }
         }
 
-        public  void ValidateFirstLetterCap(List<string> errorMessages, Element element)
-        {
-            for (int i = 1; i < element.Symbol.Length; i++)
-            {
-                char theChar = element.Symbol[i];
-
-                if (char.IsUpper(theChar))
-                {
-                    errorMessages.Add(ConstantStrings.FIRST_LETTER_CAP);
-                }
-            }
-        }
     }
 }

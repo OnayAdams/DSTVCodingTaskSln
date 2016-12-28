@@ -22,6 +22,5 @@ namespace DSTVCodingTask.Models
 
         void ValidateTrailingLetterLowerCase(List<string> errorMessages, Element element);
 
-        void ValidateFirstLetterCap(List<string> errorMessages, Element element);
     }
 }
